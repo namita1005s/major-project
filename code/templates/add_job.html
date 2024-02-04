@@ -1,0 +1,48 @@
+{% extends 'layout/base.html' %}
+{% block css %}
+    <style>
+        body {
+            background-color: beige;
+            background-image: url("https://miro.medium.com/v2/resize:fit:828/format:webp/1*G1LnmlL-FYGySnJS6tg7vQ.jpeg"); /* Replace with the actual path to your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the background color opacity if needed */
+            border-radius: 10px;
+            padding: 20px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <form action="/submit_job" method="post" class="card">
+                <div class="card-body">
+                    <h2>Add New Job</h2>
+            
+                    <!-- Job Title -->
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Job title</label>
+                        <input type="text" class="form-control" name="title" id="title" aria-describedby="jobHelp"
+                            placeholder="Enter job title" />
+                        <small id="jobHelp" class="form-text text-muted">Help text</small>
+                    </div>
+            
+                    <div class="mb-3">
+                        <label for="jobDescription" class="form-label">Job Description</label>
+                        <textarea class="form-control" name="jobDescription" id="jobDescription" rows="10"></textarea>
+                    </div>
+                
+                    <!-- Submit Button -->
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

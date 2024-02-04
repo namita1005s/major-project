@@ -1,0 +1,22 @@
+{% extends 'layout/base.html' %}
+{% block css %}
+
+{% endblock %}
+
+{% block content %}
+<form action="/submit_resume" method="post" enctype="multipart/form-data">
+    <h2>Add Resume</h2>
+
+    <!-- Full Name -->
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <!-- Resume File -->
+    <label for="resumeFile">Resume File:</label>
+    <input type="file" id="resumeFile" name="resumeFile" accept=".pdf, .doc, .docx" required>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
